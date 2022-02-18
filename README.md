@@ -13,3 +13,7 @@
 
 - `pages` folder is the most important where we can define file based routing.
 - `public` folder does not contain `index.html`.
+
+## File-based Routing
+
+- NextJS infers the routes from the folder structure.
