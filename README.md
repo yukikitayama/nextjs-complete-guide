@@ -33,7 +33,8 @@
   - React Hook defined by NextJS team.
   - This is functional component. 
   - If React uses class-based components, use `import { withRouter } from 'next/router';`
-- `[...SOMETHING].js`
+- `[...SLUG].js`
+  - URL slug is the part of the URL after the last backslash.
   - Catch-all routes
   `{ SOMETHING: ['QUERY1', 'QUERY2', ...] }`
 - Navigating with `Link`
