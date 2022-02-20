@@ -9,10 +9,23 @@
 - `npm run dev`
   - Run application during development.
 
+## Convention
+
+- React components file naming convention is `something-something.js` unlike `SomethingSomething.js` in React
+  - e.g. `event-list.js`
+
 ## NextJS folder structure
 
-- `pages` folder is the most important where we can define file based routing.
-- `public` folder does not contain `index.html`.
+- `pages` folder
+  - The most important where we can define file based routing.
+  - React components should not be in `pages` folder.
+- `public` folder 
+  - It does not contain `index.html` unlike normal `React`.
+  - Anything in `public` is served statically, such as images.
+  - Files and folders stored outside of `public` are not made accessible by NextJS - visitors cannot load files from there.
+  - `<img src="/images/IMAGE.png" />` to access the files in `public/images` folder in components.
+    - No need to add `public` to the path.
+- You can make `components` folder at root level of the NextJS project to store React components.
 
 ## File-based Routing
 
