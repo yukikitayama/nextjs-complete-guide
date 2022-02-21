@@ -56,3 +56,16 @@
   - `<Link href="/SOMEWHERE">SOMEWHERE</Link>`
 - `pages/404.js`
   - Page for 404 error.
+
+## Styling Components
+
+- `CSS module` sets up a CSS which is bound to a single component, only affecting on the component, not other components.
+  - CSS file name needs to be `FILE_NAME.module.css`.
+- If you need to add custom styling to `Link (from 'next/link')`, you need to nest `<a>` in `<Link></Link>`, and assign classes to `<a className={classes.SOMETHING}>`
+  - Don't add `href=""` to the `<a>`, because it will be added by the wrapping `<Link>`
+
+## Non-NextJS
+
+### Icons
+
+- [heroicons](https://heroicons.com/)
