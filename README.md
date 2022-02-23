@@ -57,6 +57,56 @@
 - `pages/404.js`
   - Page for 404 error.
 
+
+## Pre-Rendering (Server-Side Rendering)
+
+- By default, NextJS pre-renders all the non-dynamic data (Something hard-coded to React components and NextJS pages) to HTML
+  - e.g. Data from HTTP requests are dynamic data.
+
+### Background
+
+- In Chrome Developer tool Elements tab, you can see DOM elements, but this is the final output by JavaScipt and React reandering DOM after loading the page.
+- `View page source` by right-click the chrome screen is the actual HTML content served by the server.
+  - This HTML does not contain the actual data.
+- In client-side rendering, user experience could be sub-optimal when fetching data.
+- Biggest problem is `search engine optimization`, because the HTML that search engine sees is the actual HTML before JavaScript and React renders components.
+  - Seach engine sees the HTML of `View page source`.
+- `Hydrate with React code` once loaded
+  - Page / App is interactive.
+- Pre-rendering only matters for the initial loading. After that, application will be standard Single Page Application.
+
+### Static Generation
+
+- Recommended
+- All the pages are pre-generated in advance during build time
+- The generated pages can be cached by CDN to serve the app.
+- `export async function getStaticProps(context) { ... }`
+  - Something to normally run in server.
+- `getStaticProps()` can be added to any page files
+  - NextJS will call this function on you behalf when generating pages, or build time.
+  - Also signal NextJS that the page with this function needs to be pre-generated.
+- `import fs from 'fs';`
+  - Filesystem module from NodeJS, not third party package, core NodeJS module.
+  - `fs` fails in the client-side browser.
+- `npm run build`
+  - Pre-generate pages.
+  - `.next/server` folder is generated and it contains the pre-rendered HTMLs.
+- `npm start`
+  - View the production ready pages locally.
+- `getStaticPaths()`
+
+### Incremental Static Generate
+
+- Re-generate it on every request at most every X seconds.
+  - For highly dynamic pages where contents change all the time, set a low second
+  - Less dynamic pages maybe have minutes.
+- If another request is coming before the threshold second, re-generation doesn't happen.
+  - Re-generation will happen next time a request comes after the threshold second.
+
+### Server-Side Rendering
+
+- Pages are created just in time after deployment when a request reaches to a server.
+
 ## Styling Components
 
 - `CSS module` sets up a CSS which is bound to a single component, only affecting on the component, not other components.
