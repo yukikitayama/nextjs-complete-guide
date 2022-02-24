@@ -8,6 +8,10 @@
   - Create a NextJS project
 - `npm run dev`
   - Run application during development.
+- `npm run build`
+  - Pre-generate pages
+- `npm start`
+  - Run after `npm run build` to run production server.
 
 ## Convention
 
@@ -94,6 +98,7 @@
 - `npm start`
   - View the production ready pages locally.
 - `getStaticPaths()`
+  - Dynamically generated pages need both `getStaticPaths()` and `getStaticProps()`.
 
 ### Incremental Static Generate
 
@@ -106,6 +111,10 @@
 ### Server-Side Rendering
 
 - Pages are created just in time after deployment when a request reaches to a server.
+- `export async function getServerSideProps(context) { ... }`
+  - Runs for every incoming request
+  - `revalidate` is not necessary
+  - `context` contains `params`, `req`, and `res`.
 
 ## Styling Components
 
