@@ -99,6 +99,12 @@
   - View the production ready pages locally.
 - `getStaticPaths()`
   - Dynamically generated pages need both `getStaticPaths()` and `getStaticProps()`.
+  - `fallback: false`
+    - If some page is not contained by `getStaticPath()`, NextJS returns 404.
+  - `fallback: true`
+    - Return a temporary page until NextJS loads a page.
+  - `fallback: 'blocking'`
+    - NextJS doesn't render a page until it gets the data.
 
 ### Incremental Static Generate
 
