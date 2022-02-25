@@ -116,6 +116,11 @@
   - `revalidate` is not necessary
   - `context` contains `params`, `req`, and `res`.
 
+## Stale-While-Revalidate (SWR)
+
+- React hook for data fetching
+- `$ npm install swr`
+
 ## Styling Components
 
 - `CSS module` sets up a CSS which is bound to a single component, only affecting on the component, not other components.
