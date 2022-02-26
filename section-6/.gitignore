@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 helpers/api-util.js
 .vscode
+pages/events/[...slug].js
 
 # dependencies
 /node_modules

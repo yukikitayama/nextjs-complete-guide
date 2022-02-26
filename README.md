@@ -127,6 +127,13 @@
 - React hook for data fetching
 - `$ npm install swr`
 
+```javascript
+import useSWR from 'swr';
+
+// In React component
+const { data, error } = useSWR('URL', (url) => fetch(url).then(res => res.json()));
+```
+
 ## Styling Components
 
 - `CSS module` sets up a CSS which is bound to a single component, only affecting on the component, not other components.
