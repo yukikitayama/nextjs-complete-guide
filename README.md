@@ -141,6 +141,12 @@ const { data, error } = useSWR('URL', (url) => fetch(url).then(res => res.json()
 - If you need to add custom styling to `Link (from 'next/link')`, you need to nest `<a>` in `<Link></Link>`, and assign classes to `<a className={classes.SOMETHING}>`
   - Don't add `href=""` to the `<a>`, because it will be added by the wrapping `<Link>`
 
+## NextJS Metadata
+
+- `import Head from 'next/head';`
+  - Inject the contents in `<Head>` element to real `<head>` metadata.
+  - `<head>`, `<meta name="SOMETHING" content="SOMETHING" />`
+
 ## Non-NextJS
 
 ### Icons
