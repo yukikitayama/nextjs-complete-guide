@@ -182,6 +182,23 @@ export default MyDocument;
   - Reduce the size of the image by NextJS automatically by using `<Image src={PATH_TO_PUBLIC} alt={STRING} width={NUMBER} height={NUMBER} />`
   - [next/image](https://nextjs.org/docs/api-reference/next/image)
 
+## Deployment
+
+### Standard Build
+
+- Use `$ next build`
+- Produces optimized production bundles
+- Requires NodeJS server for server-side pages, page revalidations, and API routes as a server-side app.
+- Re-deployment is needed if code changes or if content changes without revalidations.
+
+### Full Static Build
+
+- Use `$ next export`
+- Produces 100% static app (only HTML, CSS, and JavaScript)
+- No NodeJS server is required.
+- Cannot use server-side pages, page revalidations and API routes.
+- Re-deployment is needed if code and content changes.
+
 ## Non-NextJS
 
 ### Icons
