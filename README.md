@@ -146,6 +146,41 @@ const { data, error } = useSWR('URL', (url) => fetch(url).then(res => res.json()
 - `import Head from 'next/head';`
   - Inject the contents in `<Head>` element to real `<head>` metadata.
   - `<head>`, `<meta name="SOMETHING" content="SOMETHING" />`
+- Should implement `<head>` to every page and if page brunch.
+  - Create `const pageHeadData = <Head>SOMETHING</Head>` and distribute it to each return statement.
+- `pages/_app.js`
+  - Root app components that will be rendered for every page displayed. 
+  - Add `<head>` elements that should be applied for every page. For example
+    - `<meta name="viewport" content="initial-scale=1.0, width=device-width" />`
+- If there's conflict in metadata, later elements will overwrite the earlier elements.
+- `pages/_document.js`
+  - Customize entire HTML document.
+
+```javascript
+import Document, { Html, Head, Main, NextScript } from "next/document";
+
+class MyDocument extends Document {
+  render() {
+    retrun(
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;
+```
+
+## Optimization
+
+- `import Image from 'next/image';`
+  - Reduce the size of the image by NextJS automatically by using `<Image src={PATH_TO_PUBLIC} alt={STRING} width={NUMBER} height={NUMBER} />`
+  - [next/image](https://nextjs.org/docs/api-reference/next/image)
 
 ## Non-NextJS
 
