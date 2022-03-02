@@ -182,6 +182,20 @@ export default MyDocument;
   - Reduce the size of the image by NextJS automatically by using `<Image src={PATH_TO_PUBLIC} alt={STRING} width={NUMBER} height={NUMBER} />`
   - [next/image](https://nextjs.org/docs/api-reference/next/image)
 
+## API Route
+
+- Create a special folder `pages/api`.
+- In the folder, make JavaScript files but don't export React components.
+- Create a below function and put any server-side code.
+- Any code will never end up in client code bundle, and will not be exposed to visiters of the webpage.
+
+```javascript
+function handler(req, res) {}
+
+export default handler;
+```
+- Send HTTP request to URL `/api/SOMETHING`
+
 ## Deployment
 
 1. Add page metadata, optimize code, and remove unnecessary dependencies.
