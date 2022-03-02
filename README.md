@@ -184,6 +184,13 @@ export default MyDocument;
 
 ## Deployment
 
+1. Add page metadata, optimize code, and remove unnecessary dependencies.
+  - Remove `console.log();`
+  - Make codes as small as possible
+2. Use environment variables for variable data (e.g. database credentials, API keys, ...).
+3. Do a test build and test the production-ready app locally or on some test server.
+4. Deploy
+
 ### Standard Build
 
 - Use `$ next build`
@@ -198,6 +205,12 @@ export default MyDocument;
 - No NodeJS server is required.
 - Cannot use server-side pages, page revalidations and API routes.
 - Re-deployment is needed if code and content changes.
+
+### next.config.js
+
+- Need to be at the root level in NextJS project.
+- [next.config.js](https://nextjs.org/docs/api-reference/next.config.js/introduction)
+- Set environment variables.
 
 ## Non-NextJS
 
