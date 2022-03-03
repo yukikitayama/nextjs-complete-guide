@@ -231,3 +231,7 @@ export default handler;
 ### Icons
 
 - [heroicons](https://heroicons.com/)
+
+## JavaScript
+
+- [bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
