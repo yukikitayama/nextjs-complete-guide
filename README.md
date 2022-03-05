@@ -60,7 +60,16 @@
   - `<Link href="/SOMEWHERE">SOMEWHERE</Link>`
 - `pages/404.js`
   - Page for 404 error.
+- Add `<a>` child to `<Link>` when wrapping component instead of a plain text
+  - No need `<a>` when a plain text.
 
+```javascript
+<Link href="SOME_PATH">
+  <a>
+    <SOME_COMPONENT />
+  </a>
+</Link>
+```
 
 ## Pre-Rendering (Server-Side Rendering)
 
