@@ -241,6 +241,24 @@ export default handler;
 
 - [heroicons](https://heroicons.com/)
 
+### Markdown
+
+- Good to use for blog post content, because it uses less code than using `HTML`, and can be translated into `HTML` and `JSX` with third-party packages.
+- `$ npm install react-markdown`
+  - Takes `Markdown` and outputs `JSX`
+  - `import ReactMarkdown from 'react-markdown';`
+  - `<ReactMarkdown>{SOME_TEXT_DATA_USING_MARKDOWN_SYNTAX}</ReactMarkdown>`
+  - Be careful of the version. If it differs, it won't render markdown
+  - Udemy NextJS course uses `react-markdown@6.0.0`
+- `$ npm install gray-matter`
+  - Read `Markdown` and split it into metadata and content in `Markdown` file.
+- `$npm install react-syntax-highlighter`
+  - Highlight code snippet
+
+## MongoDB
+
+- `$ npm install mongodb`
+
 ## JavaScript
 
 - [bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
