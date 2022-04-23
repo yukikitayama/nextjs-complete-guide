@@ -235,6 +235,33 @@ export default handler;
 - [next.config.js](https://nextjs.org/docs/api-reference/next.config.js/introduction)
 - Set environment variables.
 
+### Authentication
+
+Server-side sessions
+- Store unique identifier on server, and send the same identifier to client.
+- Client sends the identifier along with the requests to protected resources.
+
+Authentication tokens
+- Create (but not store) permission token on server, and send token to client.
+- Client sends the token along with requests to protected resources.
+
+How JWT works (JSON Web Token)
+- Server receives issuer data and custom data from client and uses the secret signing key at server to create JWT.
+- Signed JWT is not encrypted, so user (or client) can unpack the JWT and see the readable contents without the signing ket at server.
+- So signing key is not packed in JWT.
+- Client sends request with JWT
+- Server verifies the incoming token.
+
+- [next-auth v4 migration guide](https://next-auth.js.org/getting-started/upgrade-v4)
+
+- `$ npm install next-auth`
+- `$ npm install bcryptjs`
+
+#### NextAuth.js
+
+- API routes in NextJS should not crash with the following NextAuth.js default API routes
+  - [REST API](https://next-auth.js.org/getting-started/rest-api)
+
 ## Non-NextJS
 
 ### Icons
@@ -262,3 +289,8 @@ export default handler;
 ## JavaScript
 
 - [bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+
+## NPM
+
+- `$ npm install --save-exact`
+  - [save-exact](https://docs.npmjs.com/cli/v8/commands/npm-install#save-exact)
