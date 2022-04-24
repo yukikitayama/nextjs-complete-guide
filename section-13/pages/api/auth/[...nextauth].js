@@ -8,7 +8,7 @@ export default NextAuth({
   session: {
     jwt: true,
   },
-  provider: [
+  providers: [
     Providers.Credentials({
       async authorize(credentials) {
         const client = await connectToDatabase();

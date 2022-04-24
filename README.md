@@ -261,7 +261,8 @@ How JWT works (JSON Web Token)
 
 - API routes in NextJS should not crash with the following NextAuth.js default API routes
   - [REST API](https://next-auth.js.org/getting-started/rest-api)
-
+- When we use NextAuth, it automatically sets cookies for us to store API token for example.
+  - `next-auth.session-token`
 ## Non-NextJS
 
 ### Icons
